@@ -1,0 +1,24 @@
+server:
+  port: 9205
+  servlet:
+    context-path: /rbac_service
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  datasource: 
+    url: jdbc:mysql://localhost:3306/rbac_service
+    username: root
+    password: admin
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-timeout: 50000
+      maximum-pool-size: 10
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      minimum-idle: 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-bean-definition-overriding: true
